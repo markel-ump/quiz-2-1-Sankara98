@@ -8,14 +8,22 @@ public class Square extends Shape {
 	 * below.  Squares cannot have a negative side length.
 	 */
 	public Square(double side) throws IllegalArgumentException{
-		// TODO Implement me
+		if (side >= 0) {
+			this.side = side; 
+		}
+		else throw new IllegalArgumentException();
 	}
 	
-	/*
-	 * Implement any remaining methods demanded by the superclass.
-	 */
+	@Override
+	 public double calculateArea(){
+		 double area = Math.pow(this.side,2);
+		 return area;
+	 }
 
 	public double getSide() {
 		return side;
 	}
+
+
+	
 }
